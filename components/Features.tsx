@@ -39,21 +39,6 @@ const Features: React.FC = () => {
       description: 'Fasilitas aula serbaguna dan penginapan sederhana untuk musafir yang dapat dipesan secara online.',
     },
      {
-      icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.124-1.282-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.124-1.282.356-1.857m0 0a3.004 3.004 0 01-2.71-2.226l-.213-.638a1 1 0 01.52-1.265l.98-.392a1 1 0 011.266.52l.213.638a3.004 3.004 0 01-2.71 2.226zM12 12a3 3 0 100-6 3 3 0 000 6z" /></svg>,
-      title: 'Struktur & Profil DKM',
-      description: 'Lihat struktur kepengurusan Dewan Kemakmuran Masjid yang amanah dan profesional dalam melayani jamaah.',
-    },
-    {
-      icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.124-1.282-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.124-1.282.356-1.857m0 0A4.998 4.998 0 0112 13a4.998 4.998 0 015.356 3.143M12 13a3 3 0 100-6 3 3 0 000 6z" /></svg>,
-      title: 'Ikatan Remaja Masjid (IRMAS)',
-      description: 'Wadah kreativitas dan kegiatan positif bagi generasi muda masjid untuk berkembang dalam nuansa Islami.',
-    },
-    {
-      icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>,
-      title: 'Majelis Taklim Ibu-Ibu',
-      description: 'Forum silaturahmi dan pengajian khusus untuk para ibu dan muslimah, memperkuat iman dan ukhuwah.',
-    },
-     {
       icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>,
       title: 'Pengumuman & Laporan',
       description: 'Informasi terkini kegiatan masjid dan laporan keuangan yang transparan dapat diakses oleh seluruh jamaah.',
