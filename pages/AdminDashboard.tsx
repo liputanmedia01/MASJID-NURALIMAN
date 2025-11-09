@@ -9,18 +9,26 @@ import ServicesManager from '../components/admin/ServicesManager';
 import FormSubmissions from '../components/admin/FormSubmissions';
 import DonationManager from '../components/admin/DonationManager';
 import SettingsManager from '../components/admin/SettingsManager';
+import ProfileManager from '../components/admin/ProfileManager';
+import { type StructureData } from '../App';
 
 interface AdminDashboardProps {
   onLogout: () => void;
+  structures: StructureData[];
+  setStructures: React.Dispatch<React.SetStateAction<StructureData[]>>;
 }
 
-type AdminSection = 'dashboard' | 'berita' | 'agenda' | 'galeri' | 'download' | 'struktur' | 'layanan' | 'donasi' | 'submissions' | 'pengaturan';
+type AdminSection = 'dashboard' | 'profil' | 'berita' | 'agenda' | 'galeri' | 'download' | 'struktur' | 'layanan' | 'donasi' | 'submissions' | 'pengaturan';
 
 
-const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
+const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, structures, setStructures }) => {
     const [activeSection, setActiveSection] = useState<AdminSection>('dashboard');
     
     // Simulating database with state
+     const [profilePosts, setProfilePosts] = useState([
+        { id: 1, title: "Sejarah Singkat Masjid Nur Al-Iman", content: "Masjid Nur-Aliman didirikan atas semangat gotong royong...", image: "https://picsum.photos/800/400?random=mosque1" },
+        { id: 2, title: "Visi & Misi Kami", content: "<p>Visi...</p><ul><li>Misi 1...</li></ul>", image: "https://picsum.photos/800/400?random=mosque2" },
+    ]);
     const [news, setNews] = useState([
         { id: 1, title: "Pemasangan Kubah Utama Selesai", category: "Pembangunan", tags: "masjid, kubah", date: "2024-05-20" },
         { id: 2, title: "Kajian Akbar Fiqih Muamalah", category: "Kajian", tags: "fiqih, ekonomi", date: "2024-05-18" },
@@ -37,10 +45,6 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
         { id: 1, title: "Jadwal Imam & Khotib - Desember 2024", type: "PDF", size: "2.3 MB" },
         { id: 2, title: "Laporan Keuangan - Q3 2024", type: "PDF", size: "5.1 MB" },
     ]);
-    const [structures, setStructures] = useState([
-        { id: 'dkm', title: 'Struktur & Profil DKM', description: 'Lihat struktur kepengurusan Dewan Kemakmuran Masjid yang amanah dan profesional dalam melayani jamaah.' },
-        { id: 'irmas', title: 'Ikatan Remaja Masjid (IRMAS)', description: 'Wadah kreativitas dan kegiatan positif bagi generasi muda masjid untuk berkembang dalam nuansa Islami.' },
-    ]);
      const [services, setServices] = useState([
         { id: 1, title: 'Kajian Rutin', description: 'Program pengajian rutin mingguan dan bulanan untuk memperdalam ilmu agama bersama ustadz-ustadz terkemuka.' },
         { id: 2, title: 'Layanan ZISWAF', description: 'Penerimaan dan penyaluran Zakat, Infaq, Shodaqoh, dan Wakaf untuk membantu masyarakat yang membutuhkan.' },
@@ -49,6 +53,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
     const renderContent = () => {
         switch (activeSection) {
             case 'dashboard': return <DashboardHome />;
+            case 'profil': return <ProfileManager items={profilePosts} setItems={setProfilePosts} />;
             case 'berita': return <ContentManager contentType="Berita" items={news} setItems={setNews} />;
             case 'agenda': return <ContentManager contentType="Agenda" items={agenda} setItems={setAgenda} />;
             case 'galeri': return <GalleryManager items={galleryItems} setItems={setGalleryItems} />;

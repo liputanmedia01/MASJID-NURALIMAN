@@ -1,6 +1,6 @@
 import React from 'react';
 
-type AdminSection = 'dashboard' | 'berita' | 'agenda' | 'galeri' | 'download' | 'struktur' | 'layanan' | 'donasi' | 'submissions' | 'pengaturan';
+type AdminSection = 'dashboard' | 'profil' | 'berita' | 'agenda' | 'galeri' | 'download' | 'struktur' | 'layanan' | 'donasi' | 'submissions' | 'pengaturan';
 
 interface SidebarProps {
   activeSection: AdminSection;
@@ -43,7 +43,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection, onLo
             <div className="pt-4">
                 <h3 className="px-4 text-xs font-semibold text-brand-emerald-400 uppercase tracking-wider">Manajemen Konten</h3>
                 <div className="mt-2 space-y-1">
-                    {/* FIX: Corrected a JSX syntax error which caused cascading parsing issues. */}
+                    <NavLink section="profil" activeSection={activeSection} setActiveSection={setActiveSection} icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" /></svg>}>Profil</NavLink>
                     <NavLink section="berita" activeSection={activeSection} setActiveSection={setActiveSection} icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2h1a2 2 0 002-2V5a2 2 0 00-2-2H4a2 2 0 00-2 2zm2 0a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6a1 1 0 00-1-1H4z" clipRule="evenodd" /></svg>}>Berita</NavLink>
                     <NavLink section="agenda" activeSection={activeSection} setActiveSection={setActiveSection} icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" /></svg>}>Agenda</NavLink>
                     <NavLink section="galeri" activeSection={activeSection} setActiveSection={setActiveSection} icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" /></svg>}>Galeri</NavLink>

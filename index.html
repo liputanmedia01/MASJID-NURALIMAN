@@ -38,11 +38,16 @@
             },
             animation: {
               marquee: 'marquee 45s linear infinite',
+              'scroll-x': 'scroll-x 40s linear infinite',
             },
             keyframes: {
               marquee: {
                 '0%': { transform: 'translateX(100%)' },
                 '100%': { transform: 'translateX(-150%)' },
+              },
+              'scroll-x': {
+                'from': { transform: 'translateX(0)' },
+                'to': { transform: 'translateX(-100%)' },
               },
             },
           }
